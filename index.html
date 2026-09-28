@@ -11,9 +11,33 @@
   </head>
   <body>
     <div id="container">
+      <img src="./src/assets/Forest.jpg" class="background"/>
+      <audio id="bgSound" loop>
+        <source src="./src/assets/HorrorSound.mp3" type="audio/mpeg">
+      </audio>
+      <div class="increaseVolume" id="volumeWarning">
+          <div >
+            <h2 style="text-align: center;padding: 1.2rem;color: rgb(9, 119, 15);font-size: 2rem;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">WARNING</h2>
+          </div>
+          <div style="padding-left: 1rem;padding-right: 1rem;text-align: center;padding-bottom: 1rem;color: rgba(183, 180, 180, 0.534);font-size: 1.5rem;">
+            For the full experience, increase your  <br/> volume and use headphones
+          </div>
+          <div style="text-align: center;padding-top: 1rem;padding-bottom: 1rem;font-size: 1.4rem;background-color: rgba(17, 95, 6, 0.343);border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;color: rgba(183, 180, 180, 0.776);cursor: grab;" class="closeWarning">
+            CLOSE
+          </div>
+      </div>
+      <div class="AI" >
+        <h2 style="text-align: center;color: rgb(245, 222, 179);padding-top: 0.5rem;padding-bottom: 0.5rem;">DISCLAIMER</h2>
+          <div style="color: white;">This website was made by a human at an unreasonable hour</div>
+          <div style="color: white;">If something breaks then, it's a feature</div>
+          <div style="color: white;">If you see a ghost, then it's definitely a feature</div>
+          <div style="color: white;">Have Fun. Don't Blame Me</div>
+
+      </div>
            <div class="heading" style="text-align: center; padding-top: 2rem;">
               <div style="display: inline-block;" class="ghost">GHOST</div> <div style="display: inline-block;" class="detection">Detection</div> <div class="tool">tool</div>
            </div>
     </div>
+    <script src="./src/main.js"></script>
   </body>
 </html>

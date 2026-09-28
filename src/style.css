@@ -4,21 +4,69 @@
   box-sizing: border-box;
 }
 .heading{
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .detection{
    transform: rotate(180deg);
    font-family: "Creepster", system-ui;
-   color: rgb(5, 66, 5);
+   color: rgb(3, 90, 58);
+   font-size: 3.7rem;
+   animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  30%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 .ghost{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 2.4rem;
+  color: rgb(145, 144, 144);
   font-weight: 300;
 }
 
 .tool{
   font-family: cursive;
-  font-size: 1.5rem;
-  font-weight:600
+  font-size: 2rem;
+  font-weight:600;
+  color: white;
+}
+
+.background{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  filter: brightness(0.7);
+  z-index: -1;
+
+}
+
+.increaseVolume{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.438);
+  left: 42%;
+  top: 40%;
+  border-radius: 20px;
+}
+.AI{
+  background-color: rgba(255, 255, 255, 0.198);
+  width: 30%;
+  position: absolute;
+  text-align: center;
+  border-radius: 20px;
 }
