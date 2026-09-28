@@ -1,0 +1,24 @@
+*{
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.heading{
+  font-size: 2rem;
+}
+.detection{
+   transform: rotate(180deg);
+   font-family: "Creepster", system-ui;
+   color: rgb(5, 66, 5);
+}
+.ghost{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.tool{
+  font-family: cursive;
+  font-size: 1.5rem;
+  font-weight:600
+}
