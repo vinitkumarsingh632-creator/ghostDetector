@@ -6,6 +6,10 @@
 .heading{
   font-size: 2.5rem;
 }
+
+#container{
+  overflow-x: hidden;
+}
 .detection{
    transform: rotate(180deg);
    font-family: "Creepster", system-ui;
@@ -69,4 +73,54 @@
   position: absolute;
   text-align: center;
   border-radius: 20px;
+  top: 0px;
+}
+
+#howWorks{
+  background: #b3b0b03f;
+  height: 80vh;
+  width: 70vw;
+  border-radius: 20px;
+}
+
+#howContainer{
+  height: 80vh;
+  padding-top: 5rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.howContent{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.howHeading{
+  font-family:Creepster ;
+  color: rgb(11, 74, 11);
+}
+.first,.third,.fifth{
+  align-self: flex-start;
+  background-color: rgba(199, 199, 203, 0.286);
+  padding: 1rem;
+  min-width: 40vw;
+}
+.second,.fourth{
+  align-self: flex-end;
+  background-color: rgba(15, 88, 29, 0.31);
+  min-width: 40vw;
+  color: white;
+  padding: 1rem;
+}
+.howContent h3{
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.howContent p{
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
