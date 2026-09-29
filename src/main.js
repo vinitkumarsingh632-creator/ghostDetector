@@ -104,7 +104,14 @@ async function displayTools () {
     },1000)
   })
   await soundPromise
-  document.getElementsByClassName('ghostDetectedWarning').display = 'flex'
+  document.getElementById('toolContainer').style.opacity = 0
+  setTimeout(()=>{
+    document.getElementsByClassName('ghostDetectedWarning')[0].style.display = 'block'
+  },1000)
 }
 
-
+const closeGhostWarning = document.getElementById('closeGhostWarning')
+closeGhostWarning.addEventListener('click',()=>{
+  document.getElementsByClassName('ghostDetectedWarning')[0].style.display = 'none'
+  document.getElementById('toolContainer').style.opacity = 1
+})
