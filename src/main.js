@@ -4,7 +4,8 @@ window.addEventListener('DOMContentLoaded',(event)=>{
  const startInvestigation = document.getElementsByClassName('startInvestigation')[0]
  const investigationWarning = document.getElementById('investigationWarning')
  const finalWarning = document.getElementsByClassName('finalWarning')[0]
- 
+ const toolContainer = document.getElementById('toolContainer')
+ const emfReading = document.getElementsByClassName('emfReading')
  const wooshSound = document.getElementById('wooshSound')
  volumeWarning.addEventListener('click',(event)=>{
   wooshSound.play()
@@ -25,6 +26,8 @@ finalWarning.addEventListener('click',(event)=>{
   investigationWarning.style.opacity = 0
   setTimeout(()=>{
     investigationWarning.remove()
+    toolContainer.style.display = 'flex'
+    
   },1000)
 })
 })

@@ -103,6 +103,7 @@
 .howHeading{
   font-family:Creepster ;
   color: rgb(11, 74, 11);
+  
 }
 .first,.third,.fifth{
   align-self: flex-start;
@@ -145,14 +146,14 @@
 }
 .startInvestigation{
   font-family: Nosifer;
-  background-color: rgba(255, 0, 0, 0.312);
+  background-color: rgba(88, 15, 5, 0.551);
   padding: 0.4rem;
   color: white;
   font-size: 1.5rem;
 }
 .warning{
   font-family: creepster;
-  color: rgba(255, 0, 0, 0.492);
+  color: rgba(100, 15, 6, 0.64);
   font-size: 3rem;
 }
 #investigationWarning p{
@@ -161,4 +162,20 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: rgba(255, 255, 255, 0.682);
+}
+#toolContainer{
+  width: 100vw;
+  height: 80vh;
+  display: none;
+  justify-content: center;
+  padding-top: 1rem;
+  border-radius: 20px;
+}
+#tools{
+  background-color: rgba(202, 196, 196, 0.29);
+  width: 60vw;
+  height: 80vh;
+  border-radius: 20px;
+  display: grid;
+  
 }
