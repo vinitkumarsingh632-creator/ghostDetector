@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Black+Ops+One&family=Creepster&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Black+Ops+One&family=Creepster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -22,7 +25,7 @@
           <div style="padding-left: 1rem;padding-right: 1rem;text-align: center;padding-bottom: 1rem;color: rgba(183, 180, 180, 0.534);font-size: 1.5rem;">
             For the full experience, increase your  <br/> volume and use headphones
           </div>
-          <div style="text-align: center;padding-top: 1rem;padding-bottom: 1rem;font-size: 1.4rem;background-color: rgba(17, 95, 6, 0.343);border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;color: rgba(183, 180, 180, 0.776);cursor: grab;" class="closeWarning">
+          <div style="text-align: center;padding-top: 1rem;padding-bottom: 1rem;font-size: 1.4rem;background-color: rgba(17, 95, 6, 0.343);border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;color: rgba(183, 180, 180, 0.776);cursor: grab;" class="closeWarning" class="close">
             CLOSE
           </div>
       </div>
@@ -43,23 +46,29 @@
             <div class="howContent">
                <div class="first">
                 <h3>ENTER THE DARK</h3>
-                <p>The investigation begins when the world goes quiet. Keep your surroundings dark. Keep your volume high. And whatever you do... <strong>don't investigate alone</strong>.</p>
+                <p>The lights are off. The system is awake. Something is already listening.</p>
                </div>
                <div class="second">
                 <h3>THE SYSTEM LISTENS</h3>
-                <p>The detector begins monitoring the environment for unusual changes. Sound, movement, temperature, and electromagnetic activity are continuously analyzed.</p>
+                <p>Every sound is recorded. Every movement is noticed. Silence is not safety.</p>
                </div>
                <div class="third">
                 <h3>SOMETHING CHANGES</h3>
-                <p>Most readings mean nothing. But when several signals change at once, the system marks the location as an ANOMALY.</p>
+                <p>Most changes are harmless. Some aren't. The system knows the difference.</p>
                </div>
                <div class="fourth">
                 <h3>DON'T LOOK AWAY</h3>
-                <p>An anomaly doesn't always mean you're alone. Sometimes the system detects something before you do.</p>
+                <p>If something appears behind you, don't turn around. It may already know you're looking.</p>
                </div>
-               
+               <div style="text-align: center;cursor: grab;" class="startInvestigation">Start Investigation</div>
             </div>
            </div>
+          
+           </div>
+            <div id="investigationWarning">
+            <div class="warning">WARNING</div>
+            <p>If something responds,<br/> do not respond back</p>
+            <div style="color: rgba(203, 198, 198, 0.745);background-color: rgba(121, 0, 0, 0.735);width: 100%;text-align: center;padding: 1rem;font-family: cursive;font-size: 1.3rem;border-radius: 20px;cursor: grab;">Got It</div>
            </div>
     </div>
     <script src="./src/main.js"></script>
