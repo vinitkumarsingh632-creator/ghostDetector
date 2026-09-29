@@ -15,6 +15,7 @@
   <body>
     <div id="container">
       <img src="./src/assets/Forest.jpg" class="background"/>
+      <audio src="./src/assets/siren.wav" loop id="sirenSound"></audio>
       <audio id="bgSound" loop>
         <source src="./src/assets/HorrorSound.mp3" type="audio/mpeg">
       </audio>
@@ -75,39 +76,61 @@
             <div id="tools">
                   <div class="firstRow" style="display: flex;justify-content: space-around;">
                     <div class="emf" style="padding: 2rem;width: 20vw;">
-                    <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.462);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 60%;">EMF</h2>
+                    <div class="emfControl" style="opacity: 0;">
+                      <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.462);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 60%;">EMF</h2>
                      <div style="background-color: rgba(0, 128, 0, 0.5); padding: 1rem;border-radius: 20px;" >
                       <p style="text-align: center;font-size: 2.4rem;font-family: 'Black Ops One';" class="emfReading">00</p>
                      </div>
-                     <div style="margin-top: 2rem;font-size: 2rem;">Status: <span style="font-weight: 400;color: rgba(234, 240, 234, 0.418);font-family: Poppins;background-color: rgba(4, 83, 4, 0.5);border-radius: 20px;padding: 0.4rem;" class="emfStatus">Normal</span></div>
+                    </div>
+                     <div style="margin-top: 2rem;font-size: 2rem;opacity: 0;" class="emfStatusControl">Status: <span style="font-weight: 400;color: rgba(234, 240, 234, 0.418);font-family: Poppins;background-color: rgba(4, 83, 4, 0.5);border-radius: 20px;padding: 0.4rem;" class="emfStatus">Normal</span></div>
                   </div>
                   <div class="temp" style="padding:2rem">
-                        <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.639);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 100%;">Temperature</h2>
+                        <div class="tempControl" style="opacity: 0;">
+                          <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.639);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 100%;">Temperature</h2>
                         <div style="background-color: rgba(0, 128, 0, 0.5); padding: 1rem;border-radius: 20px;" >
-                              <p style="text-align: center;font-size: 2.4rem;font-family: 'Black Ops One';" class="tempReading">00 C</p>
+                              <p style="text-align: center;font-size: 2.4rem;font-family: 'Black Ops One';" class="tempReading">00 <span>C</span></p>
                         </div>
-                         <div style="margin-top: 2rem;font-size: 2rem;">Status: <span style="font-weight: 400;color: rgba(238, 239, 238, 0.702);font-family: Poppins;background-color: rgba(6, 66, 6, 0.462);border-radius: 20px;padding: 0.4rem;" class="tempStatus">Normal</span></div>
+                        </div>
+                         <div style="margin-top: 2rem;font-size: 2rem;opacity: 0;" class="tempStatusControl">Status: <span style="font-weight: 400;color: rgba(238, 239, 238, 0.702);font-family: Poppins;background-color: rgba(6, 66, 6, 0.462);border-radius: 20px;padding: 0.4rem;" class="tempStatus">Normal</span></div>
                   </div>
                   </div>
                   <div class="secondRow" style="display: flex;justify-content: space-around;padding-top: 2rem;">
                     <div class="scannerContainer">
-                       <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.639);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 100%;">Scanner</h2>
+                      <div class="scannerControl" style="opacity: 0;">
+                        
+                         <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.639);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 100%;">Scanner</h2>
                         <div>
                           <div class="scanner"></div>
                         </div>
-                        <div style="margin-top: 2rem;font-size: 2rem;">Status: <span style="font-weight: 400;color: rgba(238, 239, 238, 0.702);font-family: Poppins;background-color: rgba(6, 66, 6, 0.462);border-radius: 20px;padding: 0.4rem;" class="scannerStatus">Normal</span></div>
+                      
+                        <div style="margin-top: 2rem;font-size: 2rem;opacity: 0;" class="scannerStatusControl">Status: <span style="font-weight: 400;color: rgba(238, 239, 238, 0.702);font-family: Poppins;background-color: rgba(6, 66, 6, 0.462);border-radius: 20px;padding: 0.4rem;" class="scannerStatus">Normal</span></div>
+                        =
+                        </div>
                       </div>
                         <div class="soundContainer">
-                             <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.639);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 100%;">Sound</h2>
+                             <div class="soundControl" style="opacity: 0;">
+                              <h2 style="padding-bottom: 0.4rem;font-size: 2rem;font-family: 'Nosifer';color: rgba(17, 65, 6, 0.56);background-color: rgba(255, 255, 255, 0.639);text-align: center;border-radius: 20px;margin-bottom:0.8rem ;width: 100%;">Sound</h2>
                              <div style="background-color: rgba(0, 128, 0, 0.5); padding: 1rem;border-radius: 20px;">
-                                  <p style="text-align: center;font-size: 2.4rem;font-family: 'Black Ops One';" class="soundReading">00 db</p>
+                                  <p style="text-align: center;font-size: 2.4rem;font-family: 'Black Ops One';" class="soundReading">00</p>
                              </div>
-                             <div style="margin-top: 2rem;font-size: 2rem;">Status: <span style="font-weight: 400;color: rgba(238, 239, 238, 0.702);font-family: Poppins;background-color: rgba(6, 66, 6, 0.462);border-radius: 20px;padding: 0.4rem;" class="soundStatus">Normal</span></div>
+                             </div>
+                             <div style="margin-top: 2rem;font-size: 2rem;opacity: 0;" class="soundStatusControl">Status: <span style="font-weight: 400;color: rgba(238, 239, 238, 0.702);font-family: Poppins;background-color: rgba(6, 66, 6, 0.462);border-radius: 20px;padding: 0.4rem;" class="soundStatus">Normal</span></div>
                         </div>
                     </div>
 
                   </div>
            </div>
+           </div>
+           <div class="ghostDetectedWarning" style="position: absolute;background-color: rgba(0, 0, 0, 0.298);border-radius: 20px;">
+             <h2 style="font-family: Nosifer;color: rgba(255, 0, 0, 0.566);font-size: 2rem;padding: 1rem;">WARNING</h2>
+             <div style="padding: 1rem;">
+              <p style="text-align: center;font-size: 1.5rem;font-family: cursive;">Someone is around you</p>
+             <p style="text-align: center;font-size: 1.5rem;font-family: cursive;">Don't Look BACK</p>
+             </div>
+             <div style="display: flex;gap: 1rem;">
+              <div id="closeGhostWarning" style="padding: 0.5rem;font-size: 1.5rem;">Close</div>
+              <div id="talkWithGhost" style="padding: 0.5rem;font-size: 1.5rem;">Talk With Ghost</div>
+             </div>
            </div>
     </div>
     <script src="./src/main.js"></script>

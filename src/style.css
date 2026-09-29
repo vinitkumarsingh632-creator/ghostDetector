@@ -188,6 +188,31 @@
   animation: scan 3s infinite linear;
   background: conic-gradient(from 0deg,rgba(0, 128, 0, 0.591) 40deg,rgba(78, 138, 78, 0.574) 100deg,rgba(132, 236, 132, 0.517) 140deg,transparent 90deg);
 }
+.danger{
+  position: relative;
+}
+.danger::before{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 20px;
+  top: 10rem;
+  left: 1rem;
+  width: 20px;
+  border-radius: 100rem;
+  background: #f3191981;
+  animation: blinkDot 0.5s infinite;
+  transition: opacity 1s infinite ;
+  z-index: 100;
+}
+@keyframes blinkDot {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 @keyframes scan {
   0%{
     rotate: 0deg;
@@ -195,4 +220,12 @@
   100%{
     rotate: -360deg;
   }
+}
+
+.emfControl,.emfStatusControl,.tempControl,.tempStatusControl,.scannerControl,.scannerStatusControl,.soundControl,.soundStatusControl{
+  transition: opacity 1s;
+}
+.ghostDetectedWarning{
+  bottom: 40%;
+  left: 40%;
 }
