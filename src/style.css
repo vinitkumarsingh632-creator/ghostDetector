@@ -179,3 +179,20 @@
   display: grid;
   
 }
+.scanner{
+  height: 14rem;
+  width: 14rem;
+  position: relative;
+  border-radius: 100rem;
+  border: 2px solid rgba(255, 255, 255, 0.525);
+  animation: scan 3s infinite linear;
+  background: conic-gradient(from 0deg,rgba(0, 128, 0, 0.591) 40deg,rgba(78, 138, 78, 0.574) 100deg,rgba(132, 236, 132, 0.517) 140deg,transparent 90deg);
+}
+@keyframes scan {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: -360deg;
+  }
+}
