@@ -251,3 +251,8 @@
   background-color: rgba(0, 128, 0, 0.439);
   border-radius: 20px;
 }
+.ghostChats{
+  padding: 1rem;
+  background-color: rgba(255, 0, 0, 0.387);
+  border-radius: 20px;
+}
