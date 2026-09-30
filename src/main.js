@@ -77,8 +77,9 @@ async function displayTools () {
       res(true)
     },1000)
   })
-  document.getElementById('sirenSound').play()
+  
   await scannerPromise
+  document.getElementById('sirenSound').play()
   soundControl.style.opacity = 1
   scannerControl.className = 'danger'
   scannerStatus.textContent = 'DANGER'
@@ -114,4 +115,13 @@ const closeGhostWarning = document.getElementById('closeGhostWarning')
 closeGhostWarning.addEventListener('click',()=>{
   document.getElementsByClassName('ghostDetectedWarning')[0].style.display = 'none'
   document.getElementById('toolContainer').style.opacity = 1
+  
 })
+document.getElementById('talkWithGhost').addEventListener('click',()=>{
+    document.getElementById('sirenSound').remove()
+    document.getElementsByClassName('ghostDetectedWarning')[0].style.display = 'none'
+    document.getElementById('ghostVideo').style.display = 'block'
+    document.getElementById('ghostVideo').play()
+    console.log(document.getElementById('ghostVideo').currentTime)
+  })
+

@@ -59,6 +59,7 @@
   position: absolute;
   filter: brightness(0.7);
   z-index: -1;
+  
 
 }
 
@@ -230,4 +231,9 @@
 .ghostDetectedWarning{
   bottom: 40%;
   left: 40%;
+}
+
+#ghostVideo{
+  position: absolute;
+ 
 }
