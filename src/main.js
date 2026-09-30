@@ -259,67 +259,129 @@ finalWarning.addEventListener('click',(event)=>{
     displayTools()
   },1000)
 })
-const chatOptions = ['Who are you?','What is your name?']
-const firstResp = ['The one standing behind you.','The name carved into the grave beneath your home']
-const firstPr = new Promise((res,rej)=>{
-  setTimeout(()=>{
-    displayOptions(chatOptions[0],chatOptions[1])
-    res(true)
-  },1000)
-})
-await firstPr
-ghostDisplay(firstResp[ans])
+
 })
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
-function displayOptions (first,second) {
-  const parent = document.getElementById('chatBox')
-  const parentChild = document.createElement('div')
-  const nestedParent = document.createElement('div')
-  const childElem1 = document.createElement('p')
-  const childElem2 = document.createElement('p')
-  parentChild.textContent = 'You: '
-  nestedParent.style.display = 'inline-block'
-  childElem1.style.display = 'inline-block'
-  childElem2.style.display = 'inline-block'
-  parentChild.style.padding = '2rem'
-  childElem1.onclick = () =>{
-    nestedParent.textContent = childElem1.textContent
-    ans = 0
-  }
-  childElem1.setAttribute('class','userChats')
-  childElem2.setAttribute('class','userChats')
-  childElem1.style.cursor = 'grab'
-  childElem2.style.cursor = 'grab'
-  childElem2.onclick = () =>{
-    nestedParent.textContent = childElem2.textContent
-    ans = 1
-  }
-  childElem1.textContent = first
-  childElem2.textContent = second
-  parent.appendChild(parentChild)
-  parentChild.appendChild(nestedParent)
-  nestedParent.appendChild(childElem1)
-  nestedParent.appendChild(childElem2)
-}
-function ghostDisplay (data) {
+function displayUserMessage (data) {
   const parent = document.getElementById('chatBox')
   const parentChild = document.createElement('div')
   const title = document.createElement('div')
   const message = document.createElement('div')
-  title.style.padding = '1rem'
-  title.textContent = 'ghost:'
-  title.style.display = 'inline-block'
-  message.style.display = 'inline-block'
-  message.setAttribute('class','ghostChats')
   parentChild.style.padding = '2rem'
+  title.textContent = 'You:'
+  title.style.display = 'inline-block'
+  title.style.padding = '1rem'
   message.textContent = data
-  parent.appendChild(parentChild)
+  message.className = 'userChats'
+  message.style.display = 'inline-block'
   parentChild.appendChild(title)
   parentChild.appendChild(message)
+  parent.appendChild(parentChild)
+}
+
+function displayOptions(first, second, next1, next2) {
+
+  const parent = document.getElementById('chatBox');
+
+  const parentChild = document.createElement('div');
+  const nestedParent = document.createElement('div');
+
+  const childElem1 = document.createElement('p');
+  const childElem2 = document.createElement('p');
+
+  parentChild.className = 'userOptionContainer';
+
+  childElem1.className = 'userChats';
+  childElem2.className = 'userChats';
+
+  childElem1.textContent = first;
+  childElem2.textContent = second;
+
+  childElem1.style.cursor = 'pointer';
+  childElem2.style.cursor = 'pointer';
+
+  childElem1.style.display = 'inline-block';
+  childElem2.style.display = 'inline-block';
+
+  nestedParent.appendChild(childElem1);
+  nestedParent.appendChild(childElem2);
+
+  parentChild.appendChild(nestedParent);
+
+  parent.appendChild(parentChild);
+ childElem1.onclick = async()=>{
+  childElem1.style.pointerEvents = 'none'
+  childElem2.style.pointerEvents = 'none'
+  parentChild.remove()
+  displayUserMessage(first)
+  await wait(1200)
+     ghostDisplay(
+        chatFlow[currentChat].responses[0]
+    );
+    await wait(2000);
+  if(next1){
+    showChat(next1)
+  }
+ }
+  
+      childElem2.onclick = async () => {
+
+    childElem1.style.pointerEvents = 'none';
+    childElem2.style.pointerEvents = 'none';
+
+    parentChild.remove();
+
+    displayUserMessage(second);
+
+    await wait(1200);
+
+    ghostDisplay(
+      chatFlow[currentChat].responses[1]
+    );
+
+    await wait(2000);
+
+    if (next2) {
+      showChat(next2);
+    }
+  
+  }};
+  function showChat(chatName) {
+
+  currentChat = chatName;
+
+  const chat = chatFlow[chatName];
+
+  displayOptions(
+    chat.options[0],
+    chat.options[1],
+    chat.next[0],
+    chat.next[1]
+  );
+}
+setTimeout(() => {
+
+  showChat('start');
+
+}, 1000);
+function ghostDisplay (data){
+ const parent = document.getElementById('chatBox')
+ const parentChild = document.createElement('div')
+ const title = document.createElement('div')
+ const message = document.createElement('div')
+ title.style.padding = '1rem'
+ title.textContent = 'Ghost:'
+ title.style.display = 'inline-block'
+ message.style.display = 'inline-block'
+ message.setAttribute('class','ghostChats')
+ parentChild.style.padding = '2rem'
+ message.textContent = data
+ parent.appendChild(parentChild)
+ parentChild.appendChild(title)
+ parentChild.appendChild(message)
 }
 async function displayTools () {
  const emfControl = document.getElementsByClassName('emfControl')[0]
