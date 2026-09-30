@@ -30,9 +30,39 @@ finalWarning.addEventListener('click',(event)=>{
     displayTools()
   },1000)
 })
+const chatOptions = ['Who are you?','What is your name?']
+displayOptions(chatOptions[0],chatOptions[1])
 })
 
-
+function displayOptions (first,second) {
+  const parent = document.getElementById('chatBox')
+  const parentChild = document.createElement('div')
+  const nestedParent = document.createElement('div')
+  const childElem1 = document.createElement('p')
+  const childElem2 = document.createElement('p')
+  parentChild.textContent = 'You: '
+  nestedParent.style.display = 'inline-block'
+  childElem1.style.display = 'inline-block'
+  childElem2.style.display = 'inline-block'
+  parentChild.style.padding = '2rem'
+  childElem1.onclick = () =>{
+    nestedParent.textContent = childElem1.textContent
+  }
+  childElem1.setAttribute('class','userChats')
+  childElem2.setAttribute('class','userChats')
+  nestedParent.setAttribute('class','userChats')
+  childElem1.style.cursor = 'grab'
+  childElem2.style.cursor = 'grab'
+  childElem2.onclick = () =>{
+    nestedParent.textContent = childElem2.textContent
+  }
+  childElem1.textContent = first
+  childElem2.textContent = second
+  parent.appendChild(parentChild)
+  parentChild.appendChild(nestedParent)
+  nestedParent.appendChild(childElem1)
+  nestedParent.appendChild(childElem2)
+}
 async function displayTools () {
  const emfControl = document.getElementsByClassName('emfControl')[0]
  const emfStatusControl = document.getElementsByClassName('emfStatusControl')[0]
@@ -122,6 +152,13 @@ document.getElementById('talkWithGhost').addEventListener('click',()=>{
     document.getElementsByClassName('ghostDetectedWarning')[0].style.display = 'none'
     document.getElementById('ghostVideo').style.display = 'block'
     document.getElementById('ghostVideo').play()
-    console.log(document.getElementById('ghostVideo').currentTime)
+    const interval = setInterval(()=>{
+      if(document.getElementById('ghostVideo').currentTime.toFixed(1) == 12.0){
+        document.getElementById('ghostVideo').remove()
+        document.getElementById('toolContainer').remove()
+        document.getElementsByClassName('talkContainer')[0].style.display = 'flex'
+        clearInterval(interval)
+      }
+    },1000)
   })
 

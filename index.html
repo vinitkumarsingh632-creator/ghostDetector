@@ -16,7 +16,7 @@
     <div id="container">
       <img src="./src/assets/Forest.jpg" class="background"/>
       <audio src="./src/assets/siren.wav" loop id="sirenSound"></audio>
-      <video src="./src/assets/ghost.mov"></video>
+      <video src="./src/assets/ghost.mov" id="ghostVideo"></video>
       <audio id="bgSound" loop>
         <source src="./src/assets/HorrorSound.mp3" type="audio/mpeg">
       </audio>
@@ -122,6 +122,14 @@
 
                   </div>
            </div>
+           <div class="talkContainer" style="height: 80vh;width: 100vw;">
+            <div style="width: 60%;height: 80vh;background-color: rgba(249, 251, 251, 0.512);border-radius: 20px;">
+                 <h3 style="font-family: Nosifer;font-size: 2.5rem;color: rgba(3, 70, 6, 0.368);padding-top:2rem ;text-align: center;">SOMETHING IS LISTENING</h3>
+                 <div id="chatBox" style="padding: 2rem;font-size: 1.5rem;">
+                    <div style="display: inline-block;">ghost: <p style="padding-left:0.4rem;color: red;display: inline-block;">You finally decided to speak to me...</p></div>
+                 </div>
+            </div>
+           </div>
            </div>
            <div class="ghostDetectedWarning" style="position: absolute;background-color: rgba(0, 0, 0, 0.298);border-radius: 20px;display: none;z-index: 1000;">
              <h2 style="font-family: Nosifer;color: rgba(255, 0, 0, 0.566);font-size: 2.5rem;padding: 1rem;text-align: center;">WARNING</h2>
@@ -134,6 +142,7 @@
               <div id="talkWithGhost" style="padding: 0.8rem;font-size: 1.9rem;background-color: rgba(0, 128, 0, 0.326);border-radius: 20px;cursor: grab;padding-left: 0.5rem;padding-right: 0.5rem;">Talk With Ghost</div>
              </div>
            </div>
+           
            
     </div>
     <script src="./src/main.js"></script>
