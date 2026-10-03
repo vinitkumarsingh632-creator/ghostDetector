@@ -248,7 +248,7 @@ startInvestigation.addEventListener('click',(event)=>{
   wooshSound.play()
   howContainer.style.opacity = 0
   howContainer.remove()
-  investigationWarning.style.opacity = 1
+  investigationWarning.style.display = 'flex'
 })
 finalWarning.addEventListener('click',(event)=>{
   wooshSound.play()
